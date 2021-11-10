@@ -1,2 +1,0 @@
-# alurakut
-In progress --
