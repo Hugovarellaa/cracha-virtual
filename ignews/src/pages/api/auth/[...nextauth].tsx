@@ -8,7 +8,7 @@ export default NextAuth({
   providers: [
     Provider.GitHub({
       clientId: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
       scope: "read:user",
     }),
     // ...add more providers here
