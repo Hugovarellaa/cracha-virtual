@@ -19,7 +19,11 @@ export const config = {
   },
 };
 
-const relevantEvents = new Set(["checkout.session.completed"]);
+const relevantEvents = new Set([
+  "checkout.session.completed",
+  "customer.subscription.updated",
+  "customer.subscription.deleted",
+]);
 
 export default async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method === "POST") {
@@ -39,23 +43,34 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
     const { type } = event;
     if (relevantEvents.has(type)) {
-      try{
+      try {
         switch (type) {
+          case "customer.subscription.updated":
+          case "customer.subscription.deleted":
+            const subscription = event.data.object as Stripe.Subscription;
+            await saveSubscription(
+              subscription.id,
+              subscription.customer.toString(),
+            );
+
+            break;
           case "checkout.session.completed":
-            const checkoutSession = event.data.object as Stripe.Checkout.Session
+            const checkoutSession = event.data
+              .object as Stripe.Checkout.Session;
+
             await saveSubscription(
               checkoutSession.subscription.toString(),
-              checkoutSession.customer.toString()
-            )
+              checkoutSession.customer.toString(),
+              true
+            );
             break;
           default:
-            throw new Error("Unhandled event");
+            throw new Error("Unhandled event.");
         }
-      }catch (err) {
-        return response.json({err : "Webhook handler failed. "})
+      } catch (e) {
+        return response.json({ e: "Webook handler failed" });
       }
     }
-
     response.json({ received: true });
   } else {
     response.setHeader("Allow", "POST");
