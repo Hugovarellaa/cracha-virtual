@@ -5,8 +5,8 @@
 <p align="center">
   <a href="#-technologies">technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-project">project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-licença">Licença</a>
+  <a href="#-layout">layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-license">license</a>
   
 </p>
 
@@ -31,13 +31,13 @@
 
 - O Crachá virtual DoWhile é uma aplicação estatica com o objetivo de mostrar as informações do usuário trazidas do GitHub API e inseri-lás em um layout com a cara do evento DoWhile 2021
 
-## 🔖 Layout
+## 🔖 layout
 
 - You can view the project layout through [desse link](<https://www.figma.com/file/9Z2vxc8VTRuZpYjFalCMAl/Badge-Do-While2021-(Copy)?node-id=0%3A1>). It is necessary to have an account [Figma](https://figma.com) to access it.
 
 - Você pode visualizar o layout do projeto através [desse link](<https://www.figma.com/file/9Z2vxc8VTRuZpYjFalCMAl/Badge-Do-While2021-(Copy)?node-id=0%3A1>). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
-## Licença
+## license
 
 This project is under the MIT license. see the file
 [LICENSE](.github/LICENSE.md) for more details.
