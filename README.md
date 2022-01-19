@@ -22,6 +22,7 @@
 
   - HTML
   - CSS
+  - JavaScript
 
 ## 💻 project
 
